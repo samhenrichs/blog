@@ -1,0 +1,39 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<div class="first"><a href="/links" class="link-black first">Back</a></div>
+		<br>
+		<h1 class="strong"><%= @link.title %></h1>
+		<br>
+		<%= @link.name %>
+		<br>
+		<%= @link.description %>
+		<br>
+		<%= @link.link %>
+		<br>
+		<%= link_to "Delete", link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "link-black" %>
+		
+		<br>
+		<br>
+
+		
+		 <%= form_for @campaign, :url => { :controller => :campaign, :action=>:create, :link_id => @link.id } do |f| %>
+
+
+			<%= f.hidden_field :title, value: @link.title %>
+			<%= f.hidden_field :name, value: @link.name %>
+			<%= f.hidden_field :link, value: @link.link %>
+			<%= f.hidden_field :description, value: @link.description %>
+			<%= f.hidden_field :owner, value: current_user.try(:email) %>
+			<%= f.hidden_field :date, value: Date.today.to_s %>
+
+			<%= fields_for @link, method: :delete do |f| %>
+		<%= f.submit :"Start" %>
+		<% end %>
+		<% end %>
+		
+
+	</body>
+</html>

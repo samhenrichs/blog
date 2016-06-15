@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,500,600,700,900,200);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300italic,300,400italic,600,600italic,700,700italic,900,900italic);
+
+html,head,body {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+	font-family: "Source Sans Pro";
+}
+.nav {
+	height: 50px;
+	width: 100%;
+	z-index: 5;
+	background-color: #58ACFA;
+}
+.links-box, .notsignedin {
+	height: 50px;
+	line-height: 50px;
+	display: inline-block;
+	color: white;
+}
+.logo {
+	color: white;
+	margin-left: 25px;
+	display: inline-block;
+	line-height: 50px;
+	vertical-align: top;
+}
+.links-box {
+	float: right;
+	margin-right: 50px;
+	font-weight: lighter;
+}
+.brand {
+	font-size: 125%;
+	font-weight: lighter;
+}
+.link {
+	margin-left: 25px;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: lighter;
+}
+a, a:hover, a:active, a:visited {
+	color: white;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.link-black, .link-black:hover, .link-black:active, .link-black:visited {
+	color: black;
+}
+.link-black {
+	text-decoration: none;
+}
+.link-black:hover {
+	text-decoration: underline;
+}
+.strong {
+	font-weight: lighter;
+	text-align: center;
+	color: #58ACFA;
+}
+.body {
+	width: 80%;
+	margin-left: 10%;
+}
+.notsignedin {
+	font-weight: lighter;
+	color: white;
+	text-align: center;
+	margin-left: 100px;
+}
+.first {
+	margin-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

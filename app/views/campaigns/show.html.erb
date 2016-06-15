@@ -1,0 +1,19 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<a href="/campaigns/">Back</a>
+		<br>
+		<br>
+		<span>Title: </span><%= @campaign.title %>
+		<br>
+		<span>Name: </span><%= @campaign.name %>
+		<br>
+		<span>Date: </span><%= @campaign.date %>
+		<br>
+		<span>Owner: </span><%= @campaign.owner %>
+		<br>
+		<%= link_to "Delete", campaign_path(@campaign), class: "link-black",method: :delete, data: { confirm: "Are you sure?" } %>
+	</body>
+</html>

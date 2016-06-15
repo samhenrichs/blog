@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Force</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ 	<div class="nav">
+ 		<div class="logo">
+ 			<span class="brand">
+ 				blog/force
+ 			</span>
+ 		</div>
+ 		<div class="notsignedin">
+ 			<% if user_signed_in? %>
+ 			<% else %>
+ 			<span><i>You're not signed in.</i></span>
+ 			<% end %>
+ 		</div>
+ 		<div class="links-box">
+ 			<a href="/links" class="link">Links</a>
+ 			<a href="/campaigns" class="link">Campaigns</a>
+ 			<a href="/links/new" class="link">New Link</a>
+ 			<a href="/users/sign_in" class="link">Log In</a>
+ 			<a href="/users/sign_up" class="link">Sign Up</a>
+ 			<span class="link"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
+ 		</div>
+ 	</div>
+ 	
+ 	<div class="body">
+
+<%= yield %>
+	</div>
+</body>
+</html>

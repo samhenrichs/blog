@@ -1,0 +1,28 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+			<h1 class="strong">Links</h1>
+			<% if user_signed_in? %>
+				<h2><%= current_user.email %></h2>
+			<% else %>
+				<h2>You're not signed in.</h2>
+			<% end %>
+			<br>
+			<% @links.each do |link| %>
+				<%= link.title %>
+				<br>
+				<%= link.name %>
+				<br>
+				<%= link.description %>
+				<br>
+				<a href="<%= link.link %>" class="link-black"><%= link.link %></a>
+				<br>
+				<%= link_to "View", link, class: "link-black" %>
+				<br>
+				<br>
+			<% end %>
+		</div>
+	</body>
+</html>

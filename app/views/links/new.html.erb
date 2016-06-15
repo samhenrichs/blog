@@ -1,0 +1,28 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<h1 class="strong">New Link</h1>
+		<%= form_for @link do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+			<br>
+			<br>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+			<br>
+			<br>
+			<%= f.label :description %>
+			<%= f.text_field :description %>
+			<br>
+			<br>
+			<%= f.label :link %>
+			<%= f.url_field :link %>
+			<br>
+			<br>
+			<%= f.submit :"Create Link" %>
+		<% end %>
+
+	</body>
+</html>

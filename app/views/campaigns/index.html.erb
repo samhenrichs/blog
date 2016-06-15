@@ -1,0 +1,22 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<h1 class="strong">Campaigns</h1>
+		<% @campaigns.each do |campaign| %>
+		<% if campaign.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>
+			<%= campaign.title %>
+			<br>
+			<%= campaign.name %>
+			<br>
+			<%= campaign.owner %>
+			<br>
+			<%= link_to "View", campaign, class: "link-black" %>
+			<br>
+			<br>
+		<% else %>
+		<% end %>
+		<% end %>
+	</body>
+</html>
