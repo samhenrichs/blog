@@ -5,6 +5,7 @@
 	<body>
 			<h1 class="strong">Offers</h1>
 			
+			<div class="tighten">
 			<% if user_signed_in? %>
 			<br>
 			<% @links.each do |link| %>
@@ -44,19 +45,12 @@
 						<br>
 					<% end %>
 				<% else %>
-				<%= link.title %>
-				<br>
-				<%= link.name %>
-				<br>
-				<%= link.description %>
-				<br>
-				<%= link.place %>
-				<br>
-				<a href="<%= link.link %>" class="link-black"><%= link.link %></a>
-				<br>
-				<%= link_to "View", link, class: "link-black" %>
-				<br>
-				<br>			
+				<div class="offer">
+					<h3 class="blue"><%= link.title %></h3>
+					<%= link.description %>
+					<br>
+					<%= link_to "More Info", link, class: "offer-link link-black" %>
+				</div>			
 			<% end %>
 			<% end %>
 			<% end %>

@@ -11,7 +11,7 @@
  	<div class="nav">
  		<div class="logo">
  			<span class="brand">
- 				blog/force<i id="beta">beta.</i>
+ 				blog/force<i id="beta">beta</i>
  			</span>
  		</div>
  		<% if user_signed_in? %>
@@ -28,7 +28,7 @@
 				<div class="links-box">
 					<a href="/links" class="link">Offers</a>
 					<a href="/campaigns" class="link"><%= current_user.try(:email) %></a>
-					<a href="pages/contact" class="link">Contact Us</a>
+					<a href="/pages/contact" class="link">Contact Us</a>
 					<span class="link"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 				</div>
 			<% end %>

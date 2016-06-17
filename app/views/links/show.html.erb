@@ -5,33 +5,32 @@
 		<script type="text/javascript" src="link.js"></script>
 	</head>
 	<body>
-		<div class="first"><a href="/links" class="link-black first">Back</a></div>
+		<h1 class="strong"><%= @link.name %></h1>
 		<br>
-		<h1 class="strong"><%= @link.title %></h1>
-		<br>
-		<%= @link.name %>
-		<br>
-		<%= @link.description %>
-		<br>
-		<%= @link.link %>
-		<br>
-		<%= link_to "Delete", link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "link-black" %>
-		<br>
-		<br>
-		<br>
-		
-		<%= form_for @link, method: :delete do |f| %>
-			<%= f.submit :"Delete Link" %>
-		<% end %>
 
-		<%= form_for :campaign, url: campaigns_path do |x| %>
+			<div class="description lighter"><%= @link.description %></div>
+			<br>
+			<a href="<%= @link.link %>" class="link-black offer-link">View Product on Amazon</a>
+			<br>
+			<% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+			<%= link_to "Delete", link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "offer-link link-black" %>
+			<% end %>
+			<br>
+			<br>
+			<br>
+		
+		<%= form_for @link, method: :delete, class: "link" do |f| %>
+			<%= f.submit :"Delete Link", class: "btn btn-info" %>
+		<% end %>
+		<br>
+		<%= form_for :campaign, url: campaigns_path, class: "campaign" do |x| %>
 			<%= x.hidden_field :title, value: @link.title %>
 			<%= x.hidden_field :name, value: @link.name %>
 			<%= x.hidden_field :link, value: @link.link %>
 			<%= x.hidden_field :description, value: @link.description %>
 			<%= x.hidden_field :owner, value: current_user.try(:email) %>
 			<%= x.hidden_field :date, value: Date.today.to_s %>
-			<%= x.submit :"Start Campaign" %>
+			<%= x.submit :"Start Campaign", class: "btn btn-info" %>
 		<% end %>
 
 	</body>
