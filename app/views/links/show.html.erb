@@ -1,6 +1,8 @@
 <html>
 	<head>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<script type="text/javascript" src="link.js"></script>
 	</head>
 	<body>
 		<div class="first"><a href="/links" class="link-black first">Back</a></div>
@@ -14,26 +16,23 @@
 		<%= @link.link %>
 		<br>
 		<%= link_to "Delete", link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "link-black" %>
-		
 		<br>
 		<br>
-
+		<br>
 		
-		 <%= form_for @campaign, :url => { :controller => :campaign, :action=>:create, :link_id => @link.id } do |f| %>
-
-
-			<%= f.hidden_field :title, value: @link.title %>
-			<%= f.hidden_field :name, value: @link.name %>
-			<%= f.hidden_field :link, value: @link.link %>
-			<%= f.hidden_field :description, value: @link.description %>
-			<%= f.hidden_field :owner, value: current_user.try(:email) %>
-			<%= f.hidden_field :date, value: Date.today.to_s %>
-
-			<%= fields_for @link, method: :delete do |f| %>
-		<%= f.submit :"Start" %>
+		<%= form_for @link, method: :delete do |f| %>
+			<%= f.submit :"Delete Link" %>
 		<% end %>
+
+		<%= form_for :campaign, url: campaigns_path do |x| %>
+			<%= x.hidden_field :title, value: @link.title %>
+			<%= x.hidden_field :name, value: @link.name %>
+			<%= x.hidden_field :link, value: @link.link %>
+			<%= x.hidden_field :description, value: @link.description %>
+			<%= x.hidden_field :owner, value: current_user.try(:email) %>
+			<%= x.hidden_field :date, value: Date.today.to_s %>
+			<%= x.submit :"Start Campaign" %>
 		<% end %>
-		
 
 	</body>
 </html>

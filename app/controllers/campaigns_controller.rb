@@ -1,7 +1,16 @@
 class CampaignsController < ApplicationController
 
+	respond_to :json
+
 	def index
-		@campaigns = Campaign.all
+		@campaigns = Campaign.all.order("created_at DESC")
+
+		if user_signed_in?
+
+		else
+			redirect_to "/users/sign_in"
+		end
+		
 	end
 
 	def new
@@ -9,9 +18,6 @@ class CampaignsController < ApplicationController
 	end
 
 	def create
-		@link = Link.find(params[:link_id])
-		@link.destroy
-		
 		@campaign = Campaign.new(campaign_params)
 		@campaign.save
 	end

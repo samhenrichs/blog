@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+	
+	respond_to :json
 
 	def index
 		@links = Link.all.order("created_at DESC")
@@ -20,15 +22,15 @@ class LinksController < ApplicationController
 
 	def destroy
 		@link = Link.find(params[:id])
-
 		@link.destroy
+
 		redirect_to "/links"
 	end
 	
 	private
 
 	def link_params
-		params.require(:link).permit(:title, :name, :description, :link)
+		params.require(:link).permit(:title, :name, :description, :link, :place)
 	end
 
 end

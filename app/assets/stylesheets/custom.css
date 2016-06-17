@@ -10,7 +10,7 @@ html,head,body {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-	font-family: "Source Sans Pro";
+	font-family: "Open Sans";
 }
 .nav {
 	height: 50px;
@@ -82,10 +82,12 @@ a:hover {
 .first {
 	margin-top: 25px;
 }
-
-
-
-
+#beta {
+	margin-left: 10px;
+}
+#notsignedin {
+	text-align: center;
+}
 
 
 

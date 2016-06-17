@@ -3,26 +3,67 @@
 		
 	</head>
 	<body>
-			<h1 class="strong">Links</h1>
+			<h1 class="strong">Offers</h1>
+			
 			<% if user_signed_in? %>
-				<h2><%= current_user.email %></h2>
-			<% else %>
-				<h2>You're not signed in.</h2>
-			<% end %>
 			<br>
 			<% @links.each do |link| %>
+				<% if link.place == 2 %>
+					<% if Link.where(title: link.title).count >= 2 %>					
+					<% else %>
+						<%= link.title %>
+						<br>
+						<%= link.name %>
+						<br>
+						<%= link.description %>
+						<br>
+						<%= link.place %>
+						<br>
+						<a href="<%= link.link %>" class="link-black"><%= link.link %></a>
+						<br>
+						<%= link_to "View", link, class: "link-black" %>
+						<br>
+						<br>
+					<% end %>
+				<% else %>
+				<% if link.place == 3 %>
+					<% if Link.where(title: link.title).count >= 3 %>
+					<% else %>
+						<%= link.title %>
+						<br>
+						<%= link.name %>
+						<br>
+						<%= link.description %>
+						<br>
+						<%= link.place %>
+						<br>
+						<a href="<%= link.link %>" class="link-black"><%= link.link %></a>
+						<br>
+						<%= link_to "View", link, class: "link-black" %>
+						<br>
+						<br>
+					<% end %>
+				<% else %>
 				<%= link.title %>
 				<br>
 				<%= link.name %>
 				<br>
 				<%= link.description %>
 				<br>
+				<%= link.place %>
+				<br>
 				<a href="<%= link.link %>" class="link-black"><%= link.link %></a>
 				<br>
 				<%= link_to "View", link, class: "link-black" %>
 				<br>
-				<br>
+				<br>			
 			<% end %>
+			<% end %>
+			<% end %>
+			<% else %>
+			<h2 id="notsignedin">To view our offers, please <a href="/users/sign_in" class="link-black">sign in.</a></h2>
+			<% end %>
+
 		</div>
 	</body>
 </html>

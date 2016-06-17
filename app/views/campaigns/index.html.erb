@@ -3,7 +3,11 @@
 		
 	</head>
 	<body>
-		<h1 class="strong">Campaigns</h1>
+		<% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+			<h1 class="strong">Campaigns</h1>
+		<% else %>
+			<h1 class="strong">Your Campaigns</h1>
+		<% end %>
 		<% @campaigns.each do |campaign| %>
 		<% if campaign.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" %>
 			<%= campaign.title %>
@@ -18,5 +22,6 @@
 		<% else %>
 		<% end %>
 		<% end %>
+		<a href="/users/edit" class="link-black">Edit Profile</a>
 	</body>
 </html>
