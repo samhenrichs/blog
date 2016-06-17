@@ -15,7 +15,7 @@
  			</span>
  		</div>
  		<% if user_signed_in? %>
-			<% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+			<% if current_user.try(:email) == "sbhenrichs@gmail.com" || current_user.try(:email)== "camblackwell2@gmail.com" %>
 				<div class="links-box">
 		 			<a href="/links" class="link">Offers</a>
 		 			<a href="/campaigns" class="link">Campaigns</a>

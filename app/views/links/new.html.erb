@@ -3,29 +3,31 @@
 		
 	</head>
 	<body>
-		<h1 class="strong">New Link</h1>
-		<%= form_for @link do |f| %>
-			<div class="form-group">
-				<%= f.label :title %>
-				<%= f.text_field :title, class: "form-control" %>
-			</div>
-			<div class="form-group">
-				<%= f.label :name %>
-				<%= f.text_field :name, class: "form-control" %>
-			</div>
-			<div class="form-group">
-				<%= f.label :description %>
-				<%= f.text_area :description, class: "form-control" %>
-			</div>
-			<div class="form-group">
-			<%= f.label :link %>
-			<%= f.url_field :link, class: "form-control" %>
-			</div>
-			<div class="form-group">
-			<%= f.label :place %>
-			<%= f.number_field :place, class: "form-control" %>
-			</div>
-			<%= f.submit :"Create Link", class: "btn btn-info" %>
+		<% if current_user.try(:email) == "sbhenrichs@gmail.com" || current_user.try(:email) == "camblackwell2@gmail.com" %>
+			<h1 class="strong">New Link</h1>
+			<%= form_for @link do |f| %>
+				<div class="form-group">
+					<%= f.label :title %>
+					<%= f.text_field :title, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :name %>
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :description %>
+					<%= f.text_area :description, class: "form-control" %>
+				</div>
+				<div class="form-group">
+				<%= f.label :link %>
+				<%= f.url_field :link, class: "form-control" %>
+				</div>
+				<div class="form-group">
+				<%= f.label :place %>
+				<%= f.number_field :place, class: "form-control" %>
+				</div>
+				<%= f.submit :"Create Link", class: "btn btn-info" %>
+			<% end %>
 		<% end %>
 
 	</body>

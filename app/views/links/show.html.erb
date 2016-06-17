@@ -12,7 +12,7 @@
 			<br>
 			<a href="<%= @link.link %>" class="link-black offer-link">View Product on Amazon</a>
 			<br>
-			<% if current_user.try(:email) == "sbhenrichs@gmail.com" %>
+			<% if current_user.try(:email) == "sbhenrichs@gmail.com" || current_user.try(:email) == "camblackwell2@gmail.com"%>
 			<%= link_to "Delete", link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "offer-link link-black" %>
 			<% end %>
 			<br>
