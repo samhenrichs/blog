@@ -7,18 +7,19 @@
 			<h1 class="strong">Campaigns</h1>
 		<% else %>
 			<h1 class="strong">Your Campaigns</h1>
+			<h4 class="text-center">(<%= current_user.try(:email) %>)</h4>
 		<% end %>
 		<% @campaigns.each do |campaign| %>
 		<% if campaign.owner == current_user.try(:email) || current_user.try(:email) == "sbhenrichs@gmail.com" || current_user.try(:email) == "camblackwell2@gmail.com" %>
-			<%= campaign.title %>
-			<br>
-			<%= campaign.name %>
-			<br>
-			<%= campaign.owner %>
-			<br>
-			<%= link_to "View", campaign, class: "link-black" %>
-			<br>
-			<br>
+			<div class="offer">
+				<h2 class="text-center blue"><%= campaign.name %></h2>
+				<br>
+				<%= campaign.description %>
+				<br>
+				<%= campaign.owner %>
+				<br>
+				<%= link_to "View", campaign, class: "link-black offer-link" %>
+			</div>
 		<% else %>
 		<% end %>
 		<% end %>

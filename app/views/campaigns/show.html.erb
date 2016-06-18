@@ -3,17 +3,12 @@
 		
 	</head>
 	<body>
-		<a href="/campaigns/">Back</a>
+		<h1 class="strong"><%= @campaign.name %></h1>
+		<h4>Started: <%= @campaign.date %></h4>
 		<br>
+		<h4><span>Your Email: </span><%= @campaign.owner %></h4>
 		<br>
-		<span>Title: </span><%= @campaign.title %>
-		<br>
-		<span>Name: </span><%= @campaign.name %>
-		<br>
-		<span>Date: </span><%= @campaign.date %>
-		<br>
-		<span>Owner: </span><%= @campaign.owner %>
-		<br>
-		<%= link_to "Delete", campaign_path(@campaign), class: "link-black",method: :delete, data: { confirm: "Are you sure?" } %>
+		<p>Description: <%= @campaign.description %></p>
+		<%= link_to "End Campaign", campaign_path(@campaign), class: "link-black",method: :delete, data: { confirm: "Once you end your campaign, you will be paid in full. Are you sure you want to do this?" }, class: "btn btn-info space" %>
 	</body>
 </html>

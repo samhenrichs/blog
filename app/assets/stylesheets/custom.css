@@ -7295,7 +7295,7 @@ a:hover {
   width: 80%;
   margin-left:10%;
 }
-.offer {
+.offerl {
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -7320,8 +7320,15 @@ a:hover {
   bottom: 0;
   margin-top: 500px;
 }
-
-
+.offer {
+  border: 1px solid #58ACFA;
+  padding: 25px;
+  width: 80%;
+  margin-left: 10%;
+}
+.space {
+  margin-top: 50px;
+}
 
 
 
